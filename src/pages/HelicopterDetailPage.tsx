@@ -21,31 +21,50 @@ import {
 import { Button } from '../components/common/Button';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { Helicopter } from '../types';
+import img1 from '../assets/1.jpg';
+import img2 from '../assets/2.jpg';
+import img3 from '../assets/3.jpg';
+import img4 from '../assets/4.jpg';
+import img5 from '../assets/5.jpg';
+import img6 from '../assets/6.jpg';
+import img7 from '../assets/7.jpg';
+import img8 from '../assets/8.jpg';
+import img9 from '../assets/9.jpg';
+import img10 from '../assets/10.jpg';
+import img11 from '../assets/11.jpg';
+import img12 from '../assets/12.jpg';
+import img13 from '../assets/13.jpg';
+import img14 from '../assets/14.jpg';
 
-// Mock data - will be replaced with Firebase data
+// Helper to shuffle and pick N images
+function getShuffledImages(count: number) {
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14];
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+  return images.slice(0, count);
+}
+
+// Mock data - Las Vegas luxury ride and dinner package
 const mockHelicopter: Helicopter = {
   id: '1',
-  name: 'Elite Sky Cruiser',
-  model: 'R44 Raven II',
-  manufacturer: 'Robinson',
-  capacity: 3,
-  pricePerHour: 1200,
-  images: [
-    'https://images.pexels.com/photos/1426718/pexels-photo-1426718.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/1426718/pexels-photo-1426718.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=1200'
+  name: 'Helicopter Ride & Dinner Package',
+  model: 'Vegas Luxury',
+  manufacturer: 'Airbus',
+  capacity: 2,
+  pricePerHour: 829,
+  images: getShuffledImages(6),
+  features: [
+    'Luxury limousine transfers',
+    '10–12 minute Strip helicopter tour',
+    'Four-course dinner at Italian restaurant (The Venetian)',
+    'VIP check-in & lounge access',
+    'Reserved table & gourmet dinner',
+    'Optional champagne',
   ],
-  features: ['Leather Interior', 'Noise Cancelling', 'Premium Sound System', '360° Views', 'Climate Control', 'Professional Pilot'],
-  specifications: {
-    maxSpeed: '130 mph',
-    range: '350 miles',
-    ceiling: '14,000 ft',
-    engines: 'Single Turbine'
-  },
   availability: true,
-  location: 'Manhattan Heliport',
-  description: 'Experience the ultimate in luxury helicopter travel with our Elite Sky Cruiser. This meticulously maintained Robinson R44 Raven II offers unparalleled comfort and safety for up to 3 passengers. Perfect for city tours, business travel, or special occasions, this aircraft combines cutting-edge technology with premium amenities to ensure an unforgettable aerial experience.',
+  description: 'A luxury helicopter flight over the Las Vegas Strip followed by a gourmet dinner at a top-rated restaurant. Includes limo transfers, VIP seating, and optional champagne.',
   createdAt: new Date(),
   updatedAt: new Date()
 };
@@ -116,6 +135,20 @@ export const HelicopterDetailPage: React.FC = () => {
   }
 
   const totalPrice = helicopter.pricePerHour * duration;
+
+  const handleBookNow = () => {
+    if (!helicopter || !selectedDate) return;
+    const message = `Hello, I would like to book the following helicopter:\n\n` +
+      `Helicopter: ${helicopter.name}\n` +
+      `Model: ${helicopter.model}\n` +
+      `Date: ${selectedDate}\n` +
+      `Duration: ${duration} hour(s)\n` +
+      `Passengers: ${passengers}\n` +
+      `Location: ${helicopter.location}`;
+    const phone = '+44 7939 956301'; // Replace with your WhatsApp number (no + or spaces)
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -401,6 +434,7 @@ export const HelicopterDetailPage: React.FC = () => {
                   size="lg" 
                   className="w-full"
                   disabled={!helicopter.availability || !selectedDate}
+                  onClick={handleBookNow}
                 >
                   {helicopter.availability ? 'Book Now' : 'Currently Unavailable'}
                 </Button>
@@ -420,9 +454,9 @@ export const HelicopterDetailPage: React.FC = () => {
                     <Phone className="w-4 h-4 mr-2" />
                     <span className="text-sm">(234) 567-8900</span>
                   </a>
-                  <a href="mailto:info@skyluxhelicopters.com" className="flex items-center text-navy-600 hover:text-gold-600">
+                  <a href="mailto:vanguardhelicopter@gmail.com" className="flex items-center text-navy-600 hover:text-gold-600">
                     <Mail className="w-4 h-4 mr-2" />
-                    <span className="text-sm">info@skyluxhelicopters.com</span>
+                    <span className="text-sm">vanguardhelicopter@gmail.com</span>
                   </a>
                 </div>
               </div>

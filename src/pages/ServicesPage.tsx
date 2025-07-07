@@ -327,9 +327,9 @@ export const ServicesPage: React.FC = () => {
                 <Phone className="w-4 h-4 mr-2" />
                 (234) 567-8900
               </a>
-              <a href="mailto:info@skyluxhelicopters.com" className="flex items-center hover:text-gold-200 transition-colors duration-200">
+              <a href="mailto:vanguardhelicopter@gmail.com" className="flex items-center hover:text-gold-200 transition-colors duration-200">
                 <Mail className="w-4 h-4 mr-2" />
-                info@skyluxhelicopters.com
+                vanguardhelicopter@gmail.com
               </a>
             </div>
           </motion.div>

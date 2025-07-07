@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 text-gold-400 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-300">
                   123 Aviation Drive<br />
-                  Sky Harbor, NY 10001
+                  Chicago, IL 60601
                 </span>
               </li>
               <li className="flex items-center space-x-3">
@@ -88,11 +88,15 @@ export const Footer: React.FC = () => {
                 <a href="tel:+1234567890" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">
                   +1 (234) 567-8900
                 </a>
+                <span className="text-gray-300">, </span>
+                <a href="tel:+447939956301" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">
+                  +44 7939 956301
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-gold-400 flex-shrink-0" />
-                <a href="mailto:info@skyluxhelicopters.com" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">
-                  info@skyluxhelicopters.com
+                <a href="mailto:vanguardhelicopter@gmail.com" className="text-gray-300 hover:text-gold-400 transition-colors duration-200">
+                  vanguardhelicopter@gmail.com
                 </a>
               </li>
             </ul>

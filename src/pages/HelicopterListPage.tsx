@@ -5,9 +5,34 @@ import { HelicopterCard } from '../components/helicopters/HelicopterCard';
 import { Button } from '../components/common/Button';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { Helicopter } from '../types';
+import img1 from '../assets/1.jpg';
+import img2 from '../assets/2.jpg';
+import img3 from '../assets/3.jpg';
+import img4 from '../assets/4.jpg';
+import img5 from '../assets/5.jpg';
+import img6 from '../assets/6.jpg';
+import img7 from '../assets/7.jpg';
+import img8 from '../assets/8.jpg';
+import img9 from '../assets/9.jpg';
+import img10 from '../assets/10.jpg';
+import img11 from '../assets/11.jpg';
+import img12 from '../assets/12.jpg';
+import img13 from '../assets/13.jpg';
+import img14 from '../assets/14.jpg';
 
-// Use images from src/assets for Vite static import
-const sharedImages = Array.from({ length: 14 }, (_, i) => require(`../assets/${i + 1}.jpg`));
+const sharedImages = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14
+];
+
+// Helper to shuffle and pick N images
+function getShuffledImages(count: number) {
+  const images = [...sharedImages];
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+  return images.slice(0, count);
+}
 
 // Example static helicopter data with different offers
 const staticHelicopters: Helicopter[] = [
@@ -18,7 +43,7 @@ const staticHelicopters: Helicopter[] = [
     manufacturer: 'Airbus',
     capacity: 2,
     pricePerHour: 829, // for 2 people
-    images: sharedImages,
+    images: getShuffledImages(6),
     features: [
       'Luxury limousine transfers',
       '10–12 minute Strip helicopter tour',
@@ -45,8 +70,8 @@ const staticHelicopters: Helicopter[] = [
     model: 'Bell 407',
     manufacturer: 'Bell',
     capacity: 5,
-    pricePerHour: 3200,
-    images: sharedImages,
+    pricePerHour: 829, // for 2 people
+    images: getShuffledImages(5),
     features: [
       'Grand Canyon landing',
       'Champagne picnic',
@@ -72,8 +97,8 @@ const staticHelicopters: Helicopter[] = [
     model: 'Robinson R44',
     manufacturer: 'Robinson',
     capacity: 2,
-    pricePerHour: 999,
-    images: sharedImages,
+    pricePerHour: 829, // for 2 people
+    images: getShuffledImages(4),
     features: [
       'Private couple flight',
       'Rose bouquet',
@@ -98,8 +123,8 @@ const staticHelicopters: Helicopter[] = [
     model: 'Leonardo AW119',
     manufacturer: 'Leonardo',
     capacity: 6,
-    pricePerHour: 1800,
-    images: sharedImages,
+    pricePerHour: 829, // for 2 people
+    images: getShuffledImages(4),
     features: [
       'Full Strip and Downtown route',
       'Photo stops',
@@ -124,8 +149,8 @@ const staticHelicopters: Helicopter[] = [
     model: 'Airbus H145',
     manufacturer: 'Airbus',
     capacity: 8,
-    pricePerHour: 4000,
-    images: sharedImages,
+    pricePerHour: 829, // for 2 people
+    images: getShuffledImages(4),
     features: [
       'Executive seating',
       'WiFi on board',
@@ -150,8 +175,8 @@ const staticHelicopters: Helicopter[] = [
     model: 'Airbus H125',
     manufacturer: 'Airbus',
     capacity: 5,
-    pricePerHour: 2200,
-    images: sharedImages,
+    pricePerHour: 829, // for 2 people
+    images: getShuffledImages(4),
     features: [
       'Open-door shooting',
       'Professional pilot',

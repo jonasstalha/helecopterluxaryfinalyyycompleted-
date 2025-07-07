@@ -101,15 +101,10 @@ export const HelicopterCard: React.FC<HelicopterCardProps> = ({ helicopter, inde
         </div>
 
         {/* Actions */}
-        <div className="flex space-x-3">
+        <div className="flex">
           <Link to={`/helicopters/${helicopter.id}`} className="flex-1">
             <Button variant="outline" className="w-full">
               View Details
-            </Button>
-          </Link>
-          <Link to={`/helicopters/${helicopter.id}/book`} className="flex-1">
-            <Button variant="primary" className="w-full" disabled={!helicopter.availability}>
-              Book Now
             </Button>
           </Link>
         </div>

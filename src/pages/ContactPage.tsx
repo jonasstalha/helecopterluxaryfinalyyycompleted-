@@ -30,19 +30,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Our Heliport',
-    details: ['123 Aviation Drive', 'Sky Harbor, NY 10001'],
+    details: ['123 Aviation Drive', 'Chicago, IL 60601'],
     action: 'Get Directions'
   },
   {
     icon: Phone,
     title: 'Call Us',
-    details: ['+1 (234) 567-8900', '24/7 Customer Support'],
+    details: ['+1 (234) 567-8900', '24/7 Customer Support +44 7939 956301'],
     action: 'Call Now'
   },
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['info@skyluxhelicopters.com', 'Response within 2 hours'],
+    details: ['vanguardhelicopter@gmail.com', 'Response within 2 hours'],
     action: 'Send Email'
   },
   {
@@ -339,7 +339,7 @@ export const ContactPage: React.FC = () => {
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
                   <p className="text-gray-600">Interactive Map</p>
-                  <p className="text-sm text-gray-500">123 Aviation Drive, Sky Harbor, NY</p>
+                  <p className="text-sm text-gray-500">123 Aviation Drive, Chicago, IL 60601</p>
                 </div>
               </div>
 
@@ -361,13 +361,13 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </a>
                   <a
-                    href="mailto:emergency@skyluxhelicopters.com"
+                    href="mailto:vanguardhelicopter@gmail.com"
                     className="flex items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-200"
                   >
                     <Mail className="w-6 h-6 text-gold-400 mr-3" />
                     <div>
                       <p className="font-semibold">Emergency Email</p>
-                      <p className="text-sm text-gray-300">emergency@skyluxhelicopters.com</p>
+                      <p className="text-sm text-gray-300">vanguardhelicopter@gmail.com</p>
                     </div>
                   </a>
                 </div>
