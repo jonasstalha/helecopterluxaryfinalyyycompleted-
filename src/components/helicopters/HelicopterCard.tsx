@@ -5,6 +5,12 @@ import { Users, Clock, MapPin, Star } from 'lucide-react';
 import { Helicopter } from '../../types';
 import { Button } from '../common/Button';
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 interface HelicopterCardProps {
   helicopter: Helicopter;
   index?: number;
@@ -44,7 +50,7 @@ export const HelicopterCard: React.FC<HelicopterCardProps> = ({ helicopter, inde
         <div className="absolute top-4 right-4">
           <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
             <p className="text-lg font-bold text-navy-900">
-              ${helicopter.pricePerHour.toLocaleString()}<span className="text-sm font-normal">/hr</span>
+              ${helicopter.pricePerHour.toLocaleString()}
             </p>
           </div>
         </div>
@@ -102,7 +108,15 @@ export const HelicopterCard: React.FC<HelicopterCardProps> = ({ helicopter, inde
 
         {/* Actions */}
         <div className="flex">
-          <Link to={`/helicopters/${helicopter.id}`} className="flex-1">
+          <Link to={`/helicopters/${helicopter.id}`} className="flex-1" onClick={() => {
+            if (window.fbq) {
+              window.fbq('track', 'ViewContent', {
+                content_name: helicopter.name,
+                content_type: 'helicopter',
+                content_ids: [helicopter.id],
+              });
+            }
+          }}>
             <Button variant="outline" className="w-full">
               View Details
             </Button>

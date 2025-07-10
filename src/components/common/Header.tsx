@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, User, LogOut, Settings } from 'lucide-react';
 import { Button } from './Button';
 import { useAuth } from '../../hooks/useAuth';
+import logo from '../../assets/logo.jpg';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,6 @@ export const Header: React.FC = () => {
   const { currentUser, userProfile, logout } = useAuth();
 
   const navigation = [
-    { name: 'Home', href: '/' },
     { name: 'Fleet', href: '/helicopters' },
     { name: 'Services', href: '/services' },
     { name: 'Blog', href: '/blog' },
@@ -36,11 +36,13 @@ export const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
+            <img
+              src={logo}
+              alt="Vanguard Helicopter Logo"
+              className="w-12 h-12 object-contain rounded-lg shadow-md border border-gold-400 bg-white"
+            />
             <div>
-              <span className="text-2xl font-display font-bold text-navy-900">SkyLux</span>
+              <span className="text-2xl font-display font-bold text-navy-900">Vanguard</span>
               <p className="text-xs text-navy-600 -mt-1">HELICOPTERS</p>
             </div>
           </Link>

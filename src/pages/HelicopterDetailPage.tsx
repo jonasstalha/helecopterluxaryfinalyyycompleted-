@@ -46,28 +46,161 @@ function getShuffledImages(count: number) {
   return images.slice(0, count);
 }
 
-// Mock data - Las Vegas luxury ride and dinner package
-const mockHelicopter: Helicopter = {
-  id: '1',
-  name: 'Helicopter Ride & Dinner Package',
-  model: 'Vegas Luxury',
-  manufacturer: 'Airbus',
-  capacity: 2,
-  pricePerHour: 829,
-  images: getShuffledImages(6),
-  features: [
-    'Luxury limousine transfers',
-    '10–12 minute Strip helicopter tour',
-    'Four-course dinner at Italian restaurant (The Venetian)',
-    'VIP check-in & lounge access',
-    'Reserved table & gourmet dinner',
-    'Optional champagne',
-  ],
-  availability: true,
-  description: 'A luxury helicopter flight over the Las Vegas Strip followed by a gourmet dinner at a top-rated restaurant. Includes limo transfers, VIP seating, and optional champagne.',
-  createdAt: new Date(),
-  updatedAt: new Date()
-};
+// Array of real helicopter packages
+const helicopterPackages: Helicopter[] = [
+  {
+    id: '1',
+    name: 'Helicopter Ride & Dinner Package',
+    model: 'Vegas Luxury',
+    manufacturer: 'Airbus',
+    capacity: 2,
+    pricePerHour: 829,
+    images: getShuffledImages(6),
+    features: [
+      'VIP Limo',
+      'VIP Check-In',
+      'Helicopter',
+      'Gourmet Dinner',
+    ],
+    specifications: {
+      range: '340 nm',
+      ceiling: '12,500 ft',
+      engines: '1 x Turbomeca Arriel 2B1'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: `Have you ever dreamed of starting your Las Vegas evening with a breathtaking flight over the Strip and ending with a gourmet dinner at a top-rated restaurant? Our Helicopter Ride & Dinner Package is the perfect blend of excitement and elegance.\n\nBegin your journey with a luxury limo transfer and VIP lounge access. Then, soar high above the neon-lit city before indulging in a reserved four-course dinner, complete with VIP seating and optional champagne to toast the night.\n\nDeparting From: Las Vegas Strip\nDestination: Las Vegas Strip & Top Restaurant\nDuration: Approximately 3–3.5 hours from hotel pick-up to drop-off\nProduct Code: HDP-VIP\n\nTour Highlights\n• Helicopter flight above the Las Vegas Strip and Downtown\n• VIP check-in and private lounge experience\n• Luxury limo pick-up and drop-off\n• Reserved gourmet dinner at a top-rated Strip restaurant\n• Optional champagne or dessert upgrades\n\nIncluded\n• Helicopter ride over the Strip\n• Limo transfers\n• VIP lounge access\n• Four-course dinner reservation (tax & gratuity included)\n\nPlanning\n• Tour Duration: Approximately 3–3.5 hours (hotel-to-hotel)\n• Flight Duration: 10–12 minutes\n• Dinner Duration: 1.5–2 hours\n• Transportation: Hotel pickup & drop-off by private limo (included)\n  Guests should be ready in hotel lobby 15 minutes prior to scheduled time\n\nWhat to Bring\n• Valid photo I.D. (required for all guests 18+)\n• Smart-casual attire for dinner\n• Appetite for great food and adventure\n• Camera or smartphone for photos`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '2',
+    name: 'Romantic Helicopter Tour for Two',
+    model: 'Robinson R44',
+    manufacturer: 'Robinson',
+    capacity: 2,
+    pricePerHour: 1050,
+    images: getShuffledImages(6),
+    features: [
+      'Private Flight',
+      'Roses & Chocolates',
+      'Sunset Option',
+      'Limo',
+    ],
+    specifications: {
+      range: '300 nm',
+      ceiling: '14,000 ft',
+      engines: '1 x Lycoming IO-540-AE1A5'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: `Have you ever imagined surprising your partner with the most romantic evening in Las Vegas? Our Romantic Helicopter Tour for Two is crafted just for you and your loved one.\n\nYour adventure begins with a private limo pick-up and a personalized welcome. Board your exclusive helicopter for a sunset flight above the Strip, where roses and chocolates await on board. Optional champagne and a private photographer can make your evening even more magical.\n\nDeparting From: Las Vegas Strip\nDestination: Las Vegas Strip\nDuration: Approximately 1½ to 2 hours from hotel pick-up to drop-off\nProduct Code: RHT-2\n\nTour Highlights\n• Private helicopter flight just for two at sunset\n• Bouquet of roses and gourmet chocolates on board\n• Private luxury limo transfer\n• VIP lounge welcome\n• Optional champagne and in-flight photographer\n\nIncluded\n• Private helicopter tour\n• Limo pick-up and drop-off\n• Roses and chocolates\n• VIP check-in\n\nPlanning\n• Tour Duration: 1.5–2 hours (hotel-to-hotel)\n• Flight Duration: 12–15 minutes\n• Transportation: Limo pick-up and drop-off (included)\n  Guests should be ready 10 minutes prior to pick-up\n\nWhat to Bring\n• Valid I.D. (for all guests 18+)\n• Romantic playlist (Bluetooth welcome)\n• Camera or smartphone\n• Smart, comfortable clothing`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '3',
+    name: 'VIP Helicopter Tour Experience',
+    model: 'Airbus H130',
+    manufacturer: 'Airbus',
+    capacity: 2,
+    pricePerHour: 1350,
+    images: getShuffledImages(6),
+    features: [
+      'VIP Lounge',
+      'Champagne',
+      'Premium Route',
+      'Luxury Transfer',
+    ],
+    specifications: {
+      range: '350 nm',
+      ceiling: '13,500 ft',
+      engines: '1 x Turbomeca Arriel 2D'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: `Ever wondered what it feels like to be treated like a true VIP in Las Vegas? The VIP Helicopter Tour Experience elevates luxury to new heights.\n\nEnjoy a luxury SUV or stretch limo transfer and private lounge access, then skip the lines and be the first to board. Glide along a premium extended route, taking in the full glitter of the Strip and downtown, with complimentary champagne and guaranteed front-row seats.\n\nDeparting From: Las Vegas Strip\nDestination: Extended Strip & Downtown\nDuration: Approximately 2 hours from hotel pick-up to drop-off\nProduct Code: VIP-EX\n\nTour Highlights\n• VIP lounge access and front-of-the-line boarding\n• Extended, premium helicopter flight route (Strip & Downtown)\n• Complimentary champagne service\n• Guaranteed front-row/window seats\n• Luxury SUV or stretch limo transfer\n\nIncluded
+    • Premium helicopter flight\n• Private luxury transfer\n• VIP lounge & priority boarding\n• Champagne\n\nPlanning\n• Tour Duration: 2 hours (hotel-to-hotel)\n• Flight Duration: 20–30 minutes\n• Transportation: Luxury vehicle pick-up/drop-off (included)\n  Arrive at lobby 15 minutes before pick-up\n\nWhat to Bring
+    • I.D. (18+)\n• Dress to impress!\n• Camera or smartphone`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '4',
+    name: 'Luxury Grand Canyon Helicopter Excursion',
+    model: 'Bell 407',
+    manufacturer: 'Bell',
+    capacity: 2,
+    pricePerHour: 1600,
+    images: getShuffledImages(6),
+    features: [
+      'Canyon Landing',
+      'Champagne',
+      'Scenic Flight',
+      'Picnic Option',
+    ],
+    specifications: {
+      range: '330 nm',
+      ceiling: '13,500 ft',
+      engines: '1 x Rolls-Royce 250-C47B'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: `Have you ever wondered what it’s like to touch down deep in the Grand Canyon? Our Luxury Grand Canyon Helicopter Excursion whisks you from Las Vegas over the Hoover Dam, Lake Mead, and Mojave Desert before landing on a private plateau 3,200 feet below the canyon rim. Celebrate with a champagne toast and an optional gourmet picnic, surrounded by breathtaking views of ancient rock formations and the Colorado River.\n\nDeparting From: Las Vegas Strip\nDestination: Grand Canyon West (Landing)\nDuration: Approximately 4 to 4½ hours from hotel pick-up to drop-off\nProduct Code: GCH-LUX\n\nTour Highlights\n• Scenic flight over Hoover Dam, Lake Mead, and the Grand Canyon\n• Canyon landing 3,200 feet below the rim\n• Champagne toast and optional gourmet picnic at the canyon\n• Photo time among ancient rock formations and the Colorado River\n• Luxury limo transfer and VIP service\n\nIncluded\n• Helicopter flight (Vegas to Grand Canyon & back)\n• Canyon landing\n• Champagne\n• Limo transfers\n\nPlanning\n• Tour Duration: 4–4.5 hours (hotel-to-hotel)\n• Flight Duration: 70–90 minutes total\n• Ground Time: ~30 minutes at canyon\n• Transportation: Limo pick-up from most major hotels (included)\n  Guests ready 15 minutes before pick-up\n  Self-drive option available (arrive 45 minutes before departure)\n\nWhat to Bring\n• I.D. (18+)\n• Camera or smartphone (no selfie sticks or poles)\n• Bottle of water\n• Sunglasses, sunblock, and hat\n• Layered clothing (March–September); warm clothes (October–March)\n• Sturdy, toe-covering shoes (sneakers/hiking boots recommended)`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '5',
+    name: 'Helicopter Proposal Package',
+    model: 'Leonardo AW119',
+    manufacturer: 'Leonardo',
+    capacity: 2,
+    pricePerHour: 1700,
+    images: getShuffledImages(6),
+    features: [
+      'Private Flight',
+      'Proposal Sign',
+      'Photographer',
+      'Celebration',
+    ],
+    specifications: {
+      range: '400 nm',
+      ceiling: '14,500 ft',
+      engines: '1 x Pratt & Whitney PT6B-37A'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: `Have you ever dreamed of proposing in the most unforgettable way possible? Our Helicopter Proposal Package makes your moment truly legendary.\n\nBegin with a luxury limo ride and a private flight over Las Vegas or the Grand Canyon. At the perfect moment, spot a “Will You Marry Me?” sign on the ground—timed with your in-flight photographer to capture every emotion. Celebrate with roses, champagne, and the post-flight celebration you deserve.\n\nDeparting From: Las Vegas Strip\nDestination: Las Vegas Strip or Grand Canyon\nDuration: Approximately 2 to 2½ hours from hotel pick-up to drop-off\nProduct Code: PROPOSE-VIP\n\nTour Highlights\n• Private helicopter for two with VIP limo pick-up\n• “Will You Marry Me?” sign revealed on the ground\n• Professional in-flight photographer\n• Champagne and roses for celebration\n• Optional dinner reservation or custom cake\n\nIncluded\n• Private helicopter flight\n• Limo transfer\n• Proposal sign\n• Photographer\n• Champagne & roses\n\nPlanning\n• Tour Duration: 2–2.5 hours (hotel-to-hotel)\n• Flight Duration: 12–30 minutes (choice of route)\n• Transportation: Limo pick-up (included)\n  Arrive in hotel lobby 10–15 minutes prior\n\nWhat to Bring\n• The engagement ring!\n• Camera/smartphone (for your own memories)\n• Special outfit for photos`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    id: '6',
+    name: 'Anniversary & Honeymoon Celebration Tour',
+    model: 'Airbus H145',
+    manufacturer: 'Airbus',
+    capacity: 2,
+    pricePerHour: 1300,
+    images: getShuffledImages(6),
+    features: [
+      'Roses & Cake',
+      'Bubbly',
+      'Playlist',
+      'VIP Limo',
+    ],
+    specifications: {
+      range: '351 nm',
+      ceiling: '17,000 ft',
+      engines: '2 x Safran Arriel 2E'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: `Have you ever wanted to celebrate your love high above the lights of Las Vegas? Our Anniversary & Honeymoon Celebration Tour brings romance to new heights.\n\nYour evening begins with a luxury limo and VIP lounge welcome, followed by a private flight over the Strip or Grand Canyon. On board, you’ll find roses, a gourmet cake or desserts, bubbly, and your own custom playlist. Optional in-flight video or photography ensures every magical moment is yours to keep.\n\nDeparting From: Las Vegas Strip\nDestination: Las Vegas Strip or Grand Canyon\nDuration: Approximately 2 to 3 hours from hotel pick-up to drop-off\nProduct Code: CELEBRATE-LOVE\n\nTour Highlights\n• Private helicopter tour with celebration kit: roses, cake/dessert, bubbly\n• Custom music playlist for your special occasion\n• Luxury limo round-trip and VIP welcome\n• Optional in-flight video or professional photographer\n\nIncluded\n• Limo transfers\n• Private helicopter flight\n• Celebration kit (roses, cake, bubbly)\n• Playlist option\n\nPlanning\n• Tour Duration: 2–3 hours (hotel-to-hotel)\n• Flight Duration: 12–30 minutes\n• Transportation: Private limo pick-up (included)\n  Ready 10 minutes before pick-up\n\nWhat to Bring\n• Valid I.D. (18+)\n• Song list (optional)\n• Camera/smartphone\n• Romantic/celebratory attire`,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
+];
 
 const amenities = [
   { icon: Shield, name: 'Safety Certified', description: 'FAA certified with perfect safety record' },
@@ -101,16 +234,26 @@ export const HelicopterDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedDate, setSelectedDate] = useState('');
-  const [duration, setDuration] = useState(1);
-  const [passengers, setPassengers] = useState(1);
   const [isWishlisted, setIsWishlisted] = useState(false);
 
+  // Track Facebook Pixel 'Lead' event when detail page is viewed
   useEffect(() => {
-    // Simulate loading data from Firebase
+    if (helicopter && window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: helicopter.name,
+        content_type: 'helicopter',
+        content_ids: [helicopter.id],
+      });
+    }
+  }, [helicopter]);
+
+  useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
-      setHelicopter(mockHelicopter);
+      const found = helicopterPackages.find(h => h.id === id) || null;
+      setHelicopter(found);
       setLoading(false);
-    }, 1000);
+    }, 500);
   }, [id]);
 
   if (loading) {
@@ -134,18 +277,28 @@ export const HelicopterDetailPage: React.FC = () => {
     );
   }
 
-  const totalPrice = helicopter.pricePerHour * duration;
+  // Remove duration and passengers, price is fixed per package
+  const totalPrice = helicopter.pricePerHour;
 
-  const handleBookNow = () => {
-    if (!helicopter || !selectedDate) return;
+  // Track 'Purchase' event on Book Now
+  const handleBookNow = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    if (window.fbq) {
+      window.fbq('track', 'Purchase', {
+        value: helicopter.pricePerHour,
+        currency: 'USD',
+        content_name: helicopter.name,
+        content_type: 'helicopter',
+        content_ids: [helicopter.id],
+      });
+    }
+    // Always redirect to WhatsApp with the correct phone number
+    const phone = '447939956301'; // WhatsApp expects country code without '+'
     const message = `Hello, I would like to book the following helicopter:\n\n` +
       `Helicopter: ${helicopter.name}\n` +
       `Model: ${helicopter.model}\n` +
       `Date: ${selectedDate}\n` +
-      `Duration: ${duration} hour(s)\n` +
-      `Passengers: ${passengers}\n` +
       `Location: ${helicopter.location}`;
-    const phone = '+44 7939 956301'; // Replace with your WhatsApp number (no + or spaces)
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -261,16 +414,20 @@ export const HelicopterDetailPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-navy-900">
-                    ${helicopter.pricePerHour.toLocaleString()}
-                    <span className="text-lg font-normal text-navy-600">/hour</span>
+                  <div className="inline-block bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl px-6 py-4 shadow-lg">
+                    <span className="text-4xl font-extrabold text-white tracking-tight">
+                      ${helicopter.pricePerHour.toLocaleString()}
+                    </span>
                   </div>
                 </div>
               </div>
 
-              <p className="text-gray-600 leading-relaxed mb-8">
-                {helicopter.description}
-              </p>
+              {/* Enhanced Description Styling */}
+              <div className="prose prose-lg max-w-none text-navy-800 bg-gold-50 rounded-xl p-6 mb-8 border border-gold-200 shadow-inner">
+                {helicopter.description.split('\n').map((line, idx) => (
+                  <p key={idx} className="mb-2 whitespace-pre-line">{line}</p>
+                ))}
+              </div>
 
               {/* Specifications */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
@@ -278,11 +435,6 @@ export const HelicopterDetailPage: React.FC = () => {
                   <Users className="w-8 h-8 text-gold-500 mx-auto mb-2" />
                   <div className="text-2xl font-bold text-navy-900">{helicopter.capacity}</div>
                   <div className="text-sm text-navy-600">Passengers</div>
-                </div>
-                <div className="text-center">
-                  <Clock className="w-8 h-8 text-gold-500 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-navy-900">{helicopter.specifications.maxSpeed}</div>
-                  <div className="text-sm text-navy-600">Max Speed</div>
                 </div>
                 <div className="text-center">
                   <MapPin className="w-8 h-8 text-gold-500 mx-auto mb-2" />
@@ -363,11 +515,12 @@ export const HelicopterDetailPage: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
               <div className="text-center mb-6">
-                <div className="text-3xl font-bold text-navy-900 mb-1">
-                  ${helicopter.pricePerHour.toLocaleString()}
-                  <span className="text-lg font-normal text-navy-600">/hour</span>
+                <div className="inline-block bg-gradient-to-br from-gold-400 to-gold-600 rounded-xl px-8 py-6 shadow-lg mb-2">
+                  <span className="text-4xl font-extrabold text-white tracking-tight">
+                    ${helicopter.pricePerHour.toLocaleString()}
+                  </span>
                 </div>
-                <p className="text-sm text-navy-600">Professional pilot included</p>
+                <p className="text-base text-navy-700 mt-2 font-semibold">All-inclusive package price</p>
               </div>
 
               <form className="space-y-4">
@@ -383,52 +536,13 @@ export const HelicopterDetailPage: React.FC = () => {
                     min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-navy-700 mb-2">
-                    Duration (hours)
-                  </label>
-                  <select
-                    value={duration}
-                    onChange={(e) => setDuration(parseInt(e.target.value))}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-gold-500 focus:border-transparent"
-                  >
-                    {[1, 2, 3, 4, 5, 6, 8].map(hour => (
-                      <option key={hour} value={hour}>{hour} hour{hour > 1 ? 's' : ''}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-navy-700 mb-2">
-                    Passengers
-                  </label>
-                  <select
-                    value={passengers}
-                    onChange={(e) => setPassengers(parseInt(e.target.value))}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-gold-500 focus:border-transparent"
-                  >
-                    {Array.from({ length: helicopter.capacity }, (_, i) => i + 1).map(num => (
-                      <option key={num} value={num}>{num} passenger{num > 1 ? 's' : ''}</option>
-                    ))}
-                  </select>
-                </div>
-
+                {/* Remove duration and passengers fields */}
                 <div className="border-t pt-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-navy-600">Base price ({duration}h)</span>
-                    <span className="font-medium">${(helicopter.pricePerHour * duration).toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-navy-600">Service fee</span>
-                    <span className="font-medium">$150</span>
-                  </div>
-                  <div className="flex justify-between items-center text-lg font-bold text-navy-900 border-t pt-2">
-                    <span>Total</span>
-                    <span>${(totalPrice + 150).toLocaleString()}</span>
+                    <span className="text-navy-600 font-semibold">Package Price</span>
+                    <span className="font-bold text-lg">${helicopter.pricePerHour.toLocaleString()}</span>
                   </div>
                 </div>
-
                 <Button 
                   variant="primary" 
                   size="lg" 
@@ -438,14 +552,12 @@ export const HelicopterDetailPage: React.FC = () => {
                 >
                   {helicopter.availability ? 'Book Now' : 'Currently Unavailable'}
                 </Button>
-
                 <div className="text-center">
                   <p className="text-xs text-navy-600">
                     Free cancellation up to 24 hours before flight
                   </p>
                 </div>
               </form>
-
               {/* Contact Info */}
               <div className="border-t mt-6 pt-6">
                 <h4 className="font-semibold text-navy-900 mb-3">Need Help?</h4>

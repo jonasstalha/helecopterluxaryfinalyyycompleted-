@@ -42,156 +42,159 @@ const staticHelicopters: Helicopter[] = [
     model: 'Vegas Luxury',
     manufacturer: 'Airbus',
     capacity: 2,
-    pricePerHour: 829, // for 2 people
+    pricePerHour: 829, // $829 for two (was $950)
     images: getShuffledImages(6),
     features: [
-      'Luxury limousine transfers',
-      '10–12 minute Strip helicopter tour',
-      'Four-course dinner at Italian restaurant (The Venetian)',
-      'VIP check-in & lounge access',
-      'Reserved table & gourmet dinner',
+      'VIP Limo transfer',
+      'VIP Check-In',
+      '12-minute Strip helicopter tour',
+      'Gourmet Dinner at top restaurant',
       'Optional champagne',
+      'Skip the lines',
     ],
     specifications: {
-      maxSpeed: '155 knots',
       range: '340 nm',
       ceiling: '12,500 ft',
       engines: '1 x Turbomeca Arriel 2B1'
     },
     availability: true,
     location: 'Las Vegas',
-    description: `A luxury helicopter flight over the Las Vegas Strip followed by a gourmet dinner at a top-rated restaurant. Includes limo transfers, VIP seating, and optional champagne.\n\nTarget: Couples, special occasions, tourists wanting the full Vegas experience.\n\nStart your evening with a VIP limousine ride from your hotel to the heliport. Skip the lines and relax in an exclusive lounge before boarding your state-of-the-art helicopter. Soar above the neon lights of the Strip, taking in stunning aerial views of iconic landmarks. After landing, your limo takes you to the best Italian restaurant at The Venetian, where a reserved table and a gourmet four-course dinner await. Perfect for couples, celebrations, or anyone seeking the ultimate Vegas night out!`,
+    description: `Special Offer! Experience Vegas in Style: Enjoy a luxury limo transfer to the heliport, skip the lines, then soar above the dazzling Strip. After your flight, indulge in a gourmet dinner at a top-rated restaurant, with VIP seating and optional champagne.`,
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     id: '2',
-    name: 'Grand Canyon Adventure',
-    model: 'Bell 407',
-    manufacturer: 'Bell',
-    capacity: 5,
-    pricePerHour: 829, // for 2 people
-    images: getShuffledImages(5),
-    features: [
-      'Grand Canyon landing',
-      'Champagne picnic',
-      'Aerial photo package',
-      'VIP check-in',
-      'Custom route',
-    ],
-    specifications: {
-      maxSpeed: '140 knots',
-      range: '330 nm',
-      ceiling: '13,500 ft',
-      engines: '1 x Rolls-Royce 250-C47B'
-    },
-    availability: false,
-    location: 'Las Vegas',
-    description: 'Experience the Grand Canyon like never before. Land inside the canyon and enjoy a champagne picnic. Includes custom route and VIP check-in.',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  },
-  {
-    id: '3',
-    name: 'Night Lights Romance',
+    name: 'Romantic Helicopter Tour for Two',
     model: 'Robinson R44',
     manufacturer: 'Robinson',
     capacity: 2,
-    pricePerHour: 829, // for 2 people
-    images: getShuffledImages(4),
+    pricePerHour: 1050, // $1,050 per couple (was $1,200)
+    images: getShuffledImages(5),
     features: [
-      'Private couple flight',
-      'Rose bouquet',
-      'Dinner reservation included',
-      'VIP lounge',
+      'Private Flight',
+      'Roses & Chocolates',
+      'Sunset Option',
+      'Limo transfer',
+      'Optional photographer',
+      'Personalized playlist',
     ],
     specifications: {
-      maxSpeed: '110 knots',
       range: '300 nm',
       ceiling: '14,000 ft',
       engines: '1 x Lycoming IO-540-AE1A5'
     },
     availability: true,
     location: 'Las Vegas',
-    description: 'Perfect for proposals or anniversaries. Enjoy a romantic flight, rose bouquet, and a special dinner reservation with VIP lounge access.',
+    description: 'Perfect for Couples! A Private, Unforgettable Evening: Surprise your loved one with a sunset flight just for two, complete with roses and chocolates on board. Optional upgrades: champagne, photographer, and a personalized playlist.',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    id: '4',
-    name: 'Strip & Downtown Explorer',
+    id: '3',
+    name: 'VIP Helicopter Tour Experience',
     model: 'Leonardo AW119',
     manufacturer: 'Leonardo',
-    capacity: 6,
-    pricePerHour: 829, // for 2 people
+    capacity: 2,
+    pricePerHour: 1350, // $1,350 for two (was $1,450)
     images: getShuffledImages(4),
     features: [
-      'Full Strip and Downtown route',
-      'Photo stops',
-      'VIP check-in',
-      'Flexible timing',
+      'VIP Lounge access',
+      'Complimentary Champagne',
+      'Premium Route',
+      'Luxury Transfer',
+      'Guaranteed front-row seats',
+      'Professional photos available',
     ],
     specifications: {
-      maxSpeed: '150 knots',
       range: '400 nm',
       ceiling: '14,500 ft',
       engines: '1 x Pratt & Whitney PT6B-37A'
     },
     availability: true,
     location: 'Las Vegas',
-    description: 'See the entire Las Vegas Strip and historic Downtown from above. Includes photo stops and flexible timing.',
+    description: 'New Experience! All-Inclusive VIP Adventure: Arrive in a luxury SUV or stretch limo, enjoy private lounge access, skip the line, and board first. Premium flight route, complimentary champagne, and guaranteed front-row seats—plus pro photos available!',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    id: '4',
+    name: 'Luxury Grand Canyon Helicopter Excursion',
+    model: 'Bell 407',
+    manufacturer: 'Bell',
+    capacity: 2,
+    pricePerHour: 1600, // $1,600 for two (was $1,800)
+    images: getShuffledImages(4),
+    features: [
+      'Canyon Landing',
+      'Champagne Toast',
+      'Scenic Flight',
+      'Picnic Option',
+      'Hoover Dam flyover',
+      'Photo ops at private plateau',
+    ],
+    specifications: {
+      range: '330 nm',
+      ceiling: '13,500 ft',
+      engines: '1 x Rolls-Royce 250-C47B'
+    },
+    availability: true,
+    location: 'Las Vegas',
+    description: 'Bucket List Experience! Ultimate Grand Canyon Adventure: Fly from Vegas over Hoover Dam and Lake Mead, landing at a private Grand Canyon plateau for a champagne toast and photo ops. Optional gourmet picnic available at the canyon rim.',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     id: '5',
-    name: 'VIP Business Charter',
+    name: 'Helicopter Proposal Package',
     model: 'Airbus H145',
     manufacturer: 'Airbus',
-    capacity: 8,
-    pricePerHour: 829, // for 2 people
+    capacity: 2,
+    pricePerHour: 1700, // $1,700 for two
     images: getShuffledImages(4),
     features: [
-      'Executive seating',
-      'WiFi on board',
-      'Direct airport transfer',
-      'Concierge service',
+      'Private Flight',
+      'Custom "Will You Marry Me?" sign',
+      'Professional Photographer',
+      'Celebration Package',
+      'Romantic dinner option',
+      'Limo transfer',
     ],
     specifications: {
-      maxSpeed: '150 knots',
       range: '351 nm',
       ceiling: '17,000 ft',
       engines: '2 x Safran Arriel 2E'
     },
     availability: true,
     location: 'Las Vegas',
-    description: 'Business charter with executive seating, WiFi, and direct airport transfer. Perfect for corporate groups.',
+    description: 'For Life\'s Biggest Question! The Ultimate Proposal: Plan the perfect proposal with a private helicopter, "Will You Marry Me?" sign on the ground, in-flight photographer, and post-flight celebration (roses, champagne, or a romantic dinner).',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
     id: '6',
-    name: 'Aerial Photography Pro',
+    name: 'Anniversary & Honeymoon Celebration Tour',
     model: 'Airbus H125',
     manufacturer: 'Airbus',
-    capacity: 5,
-    pricePerHour: 829, // for 2 people
+    capacity: 2,
+    pricePerHour: 1300, // $1,300 per couple (was $1,450)
     images: getShuffledImages(4),
     features: [
-      'Open-door shooting',
-      'Professional pilot',
-      'Flexible route',
-      'Photo/video support',
+      'Roses & Cake',
+      'Champagne',
+      'Custom Playlist',
+      'VIP Limo',
+      'In-flight video option',
+      'Extra flowers available',
     ],
     specifications: {
-      maxSpeed: '140 knots',
       range: '340 nm',
       ceiling: '16,000 ft',
       engines: '1 x Turbomeca Arriel 2D'
     },
     availability: true,
     location: 'Las Vegas',
-    description: 'For photographers and filmmakers. Open-door shooting, flexible route, and professional pilot support.',
+    description: 'Celebrate Love! Romantic Celebration in the Sky: A luxury helicopter tour with a custom celebration kit—roses, cake or desserts, bubbly, and a custom playlist. Optional in-flight video or extra flowers for a personalized touch.',
     createdAt: new Date(),
     updatedAt: new Date(),
   }
@@ -220,9 +223,10 @@ export const HelicopterListPage: React.FC = () => {
   useEffect(() => {
     // Apply filters and search
     let filtered = helicopters.filter(helicopter => {
-      const matchesSearch = helicopter.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           helicopter.manufacturer.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           helicopter.model.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch =
+        (typeof helicopter.name === 'string' && helicopter.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (typeof helicopter.manufacturer === 'string' && helicopter.manufacturer.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (typeof helicopter.model === 'string' && helicopter.model.toLowerCase().includes(searchTerm.toLowerCase()));
 
       const matchesCapacity = !filters.capacity || helicopter.capacity >= parseInt(filters.capacity);
       
