@@ -32,19 +32,35 @@ const amenities = [
 const reviews = [
   {
     id: 1,
-    name: 'Sarah Johnson',
+    name: 'Emily Rodriguez',
     rating: 5,
-    date: '2024-01-15',
-    comment: 'Absolutely incredible experience! The pilot was professional and the views were breathtaking. Highly recommend for special occasions.',
+    date: '2025-06-18',
+    comment: 'What an amazing anniversary surprise! The sunset tour was magical, and the pilot made sure we got the best photos of the city skyline. The helicopter was immaculate and the whole experience exceeded our expectations.',
     avatar: 'https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150'
   },
   {
     id: 2,
-    name: 'Michael Chen',
+    name: 'David Kim',
     rating: 5,
-    date: '2024-01-10',
-    comment: 'Perfect for our business meeting transport. Punctual, comfortable, and impressive. Will definitely book again.',
+    date: '2025-06-22',
+    comment: 'Booked this for our corporate retreat and it was the highlight of the event. Professional service, smooth flight, and incredible aerial views. Our entire team was impressed with the safety standards and attention to detail.',
     avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150'
+  },
+  {
+    id: 3,
+    name: 'Isabella Martinez',
+    rating: 5,
+    date: '2025-07-05',
+    comment: 'Perfect for our wedding proposal! The pilot was discreet and helpful, and the views over the coastline were absolutely stunning. My fiancée was speechless - couldn\'t have asked for a better experience.',
+    avatar: 'https://images.pexels.com/photos/3686769/pexels-photo-3686769.jpeg?auto=compress&cs=tinysrgb&w=150'
+  },
+  {
+    id: 4,
+    name: 'James Thompson',
+    rating: 5,
+    date: '2025-07-12',
+    comment: 'Exceptional service from start to finish. Used their VIP transport service for a luxury hotel transfer. The helicopter was pristine, staff was professional, and the convenience factor is unmatched. Worth every penny!',
+    avatar: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150'
   }
 ];
 
@@ -299,7 +315,7 @@ export const HelicopterDetailPage: React.FC = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 text-gold-400 fill-current" />
                     ))}
-                    <span className="ml-2 text-sm text-navy-600">(24 reviews)</span>
+                    <span className="ml-2 text-sm text-navy-600">(47 reviews)</span>
                   </div>
                   <div className="flex items-center">
                     <Users className="w-5 h-5 text-navy-400 mr-2" />
